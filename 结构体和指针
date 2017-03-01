@@ -1,0 +1,47 @@
+//
+//  main.cpp
+//  20161215_结构体和指针
+//
+//  Created by jinyu on 2016/12/15.
+//  Copyright © 2016年 jinyu. All rights reserved.
+//
+
+/*
+#include<stdio.h>
+struct student
+{
+    char name[20];
+    char sex;
+    long num;
+    float score[3];
+};
+int main()
+{
+    struct student stu,*p=&stu;
+    scanf("%s %c %ld %f %f %f",p->name,&p->sex,&p->num,&p->score[0],&p->score[1],&p->score[2]);
+    printf("%s %c %ld %f %f %f",p->name,p->sex,p->num,p->score[0],p->score[1],p->score[2]);
+    return 0;
+}
+*/
+#include<stdio.h>
+struct student
+{
+    char name[20];
+    char sex;
+    long num;
+    float ave;
+};
+int main()
+{
+    int i;
+    struct student stu[3]={{"zhangsan",'m',101,1},{"lisi",'m',102,2},{"wangwu",'m',103,3}},*p1,*q;
+    struct student student1={"sb",'m',100,100};
+    p1=&student1;
+    q=stu;
+    printf("%s %c %f",student1.name,(*p1).sex,p1->ave);
+    for(i=0;i<3;i++,q++)
+    {
+        printf("%s %c %ld %f\n",(*q).name,q->sex,q->num,q->ave);
+    }
+    return 0;
+}
